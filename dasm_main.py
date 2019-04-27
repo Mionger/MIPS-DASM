@@ -1,4 +1,5 @@
 import sys
+from dasm_code import Code
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
@@ -22,7 +23,6 @@ if __name__ == '__main__':
             continue
         
         code = Code(line)
-        code.deal_input()
         code.hex_code_to_bin_code()
         code.bin_code_to_mips_code()
 
