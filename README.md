@@ -14,13 +14,13 @@ Lastest Update
 &nbsp;
 : 
 &nbsp;
-2019-5-7  
+2019-5-8  
 &nbsp;&nbsp;&nbsp;&nbsp;
 Version
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 : 
 &nbsp;
-v 0.0.3  
+v 0.0.4  
 &nbsp;&nbsp;&nbsp;&nbsp;
 OS
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,7 +33,10 @@ Language&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;
 python    
 &nbsp;&nbsp;&nbsp;&nbsp;
-
+  
+>v 0.0.4 2019-5-8
+>1. Complete SLTI/SLTIU/LW/SW/J/JAL
+  
 >v 0.0.3 2019-5-7
 >1. Complete ADDI/ADDIU/ANDI/ORI/XORI/LUI/BEQ/BNE
   
@@ -42,5 +45,5 @@ python
 >2. fix Code.__init__(str)
 >3. delete Code.input_deal()
   
->v 0.0.1 2019-4-26 
+>v 0.0.1 2019-4-26  
 >1.Define the interfaces of the modules  
