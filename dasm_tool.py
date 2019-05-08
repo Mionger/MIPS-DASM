@@ -46,10 +46,19 @@ def hex_to_bin(hex_num:'str') -> 'str':
 
 
 def bin_to_hex(bin_num:'str', weight: int, flag:int) -> 'str':
-    sign = ['0', '1']
+    sign = ['0']
+    sign.append(bin_num[0])
     hex_code = "0x"
     for i in range(weight - len(bin_num)):
         bin_num = sign[flag] + bin_num
+    for i in range(bit_weight // 4):
+        j = 4*i
+        hex_code += dict_b_to_h[bin_num[j:j+4]]
+    return hex_code
+
+def addr_bin_to_hex(bin_num:'str') -> 'str':
+    hex_code = "0x"
+    bin_num = "0000" + bin_num + "00"
     for i in range(bit_weight // 4):
         j = 4*i
         hex_code += dict_b_to_h[bin_num[j:j+4]]

@@ -70,6 +70,18 @@ class Code(object):
             self.mips_code = self.beq(rs, rt, imme)
         if op == "000101":
             self.mips_code = self.bne(rs, rt, imme)
+        if op == "001010":
+            self.mips_code = self.slti(rs, rt, imme)
+        if op == "001011":
+            self.mips_code = self.sltiu(rs, rt, imme)
+        if op == "100011":
+            self.mips_code = self.lw(rs, rt, imme)
+        if op == "101011":
+            self.mips_code = self.sw(rs, rt, imme)
+        if op == "000010":
+            self.mips_code = self.j(addr)
+        if op == "000011":
+            self.mips_code = self.jal(addr)
 
     def op_0000(self):
         return
@@ -97,6 +109,24 @@ class Code(object):
 
     def bne(self, rs:'str', rt:'str', imme:'str'):
         return ("bne     "+dict_reg[rs]+","+dict_reg[rt]+","+bin_to_hex(imme, 32, 1))
+    
+    def slti(self, rs:'str', rt:'str', imme:'str'):
+        return ("slti    "+dict_reg[rs]+","+dict_reg[rt]+","+bin_to_hex(imme, 32, 1))
+
+    def sltiu(self, rs:'str', rt:'str', imme:'str'):
+        return ("sltiu   "+dict_reg[rs]+","+dict_reg[rt]+","+bin_to_hex(imme, 32, 0))
+
+    def lw(self, rs:'str', rt:'str', imme:'str'):
+        return ("lw      "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+
+    def sw(self, rs:'str', rt:'str', imme:'str'):
+        return ("sw      "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+
+    def j(self, addr:'str'):
+        return ("j       "+addr_bin_to_hex(addr))
+
+    def jal(self, addr:'str'):
+        return ("jal     "+addr_bin_to_hex(addr))
 # debug for __init__(str)
 # c = Code("01234567\n")
 # # c.deal_input()
