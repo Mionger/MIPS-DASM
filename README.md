@@ -14,13 +14,13 @@ Lastest Update
 &nbsp;
 : 
 &nbsp;
-2019-5-8  
+2019-5-10  
 &nbsp;&nbsp;&nbsp;&nbsp;
 Version
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 : 
 &nbsp;
-v 0.0.4  
+v 0.0.5  
 &nbsp;&nbsp;&nbsp;&nbsp;
 OS
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,6 +33,15 @@ Language&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;
 python    
 &nbsp;&nbsp;&nbsp;&nbsp;
+
+**Total completed 31 mips instructions now**  
+  
+## **TODO list:**  
+**1. extend it to support 54 mips instructions**  
+
+## Update Log  
+>v 0.0.5 2019-5-10
+>1. Complete ADD/ADDU/SUB/SUBU/AND/OR/XOR/NOR/SLT/SLTU/SLL/SRL/SRA/SLL/SRL/SRAV/JR  
   
 >v 0.0.4 2019-5-8
 >1. Complete SLTI/SLTIU/LW/SW/J/JAL
