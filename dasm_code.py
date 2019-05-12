@@ -87,6 +87,30 @@ class Code(object):
             self.mips_code = self.j(addr)
         if op == "000011":
             self.mips_code = self.jal(addr)
+        if op == "000001":
+            self.mips_code = self.bgez(rs, imme)
+        if op == "100100":
+            self.mips_code = self.lbu(rs, rt, imme)
+        if op == "100101":
+            self.mips_code = self.lhu(rs, rt, imme)     
+        if op == "100000":
+            self.mips_code = self.lb(rs, rt, imme)
+        if op == "100001":
+            self.mips_code = self.lh(rs, rt, imme)  
+        if op == "101000":
+            self.mips_code = self.sb(rs, rt, imme)
+        if op == "101001":
+            self.mips_code = self.sh(rs, rt, imme)     
+        if op == "010000":
+            if func == "011000":
+                self.mips_code = self.eret()
+            if func == "000000":
+                if rs == "00000":
+                    self.mips_code = self.mfc0(rt, rd)
+                if rs == "00100":
+                    self.mips_code = self.mtc0(rt, rd)
+        if op == "011100":
+            self.mips_code = self.clz(rs, rd)
 
     def op_0000(self, rs:'str', rt:'str', rd:'str', shamt:'str', func:'str'):
         # 顺序为dst
@@ -124,6 +148,30 @@ class Code(object):
             return ("sra     "+dict_reg[rd]+","+dict_reg[rt]+","+bin_to_hex(shamt, 32, 0))
         if func == "001000":
             return ("jr      "+dict_reg[rs])
+        if func == "011010":
+            return ("div     "+dict_reg[rs]+","+dict_reg[rt])
+        if func == "011011":
+            return ("divu    "+dict_reg[rs]+","+dict_reg[rt])
+        if func == "011000":
+            return ("mult    "+dict_reg[rs]+","+dict_reg[rt])
+        if func == "011001":
+            return ("multu   "+dict_reg[rs]+","+dict_reg[rt])
+        if func == "001001":
+            return ("jalr    "+dict_reg[rs])
+        if func == "001101":
+            return ("break")
+        if func == "001100":
+            return ("syscall")
+        if func == "010000":
+            return ("mfhi    "+dict_reg[rd])
+        if func == "010010":
+            return ("mflo    "+dict_reg[rd])
+        if func == "010001":
+            return ("mthi    "+dict_reg[rs])
+        if func == "010011":
+            return ("mtlo    "+dict_reg[rs])
+        if func == "110100":
+            return ("teq     "+dict_reg[rs]+","+dict_reg[rt])
 
     def addi(self, rs:'str', rt:'str', imme:'str'):
         return ("addi    "+dict_reg[rs]+","+dict_reg[rt]+","+bin_to_hex(imme, 32, 1))
@@ -166,3 +214,36 @@ class Code(object):
 
     def jal(self, addr:'str'):
         return ("jal     "+addr_bin_to_hex(addr))
+
+    def bgez(self, rs:'str', imme:'str'):
+        return ("bgez    "+dict_reg[rs]+","+bin_to_hex(imme, 32, 1))
+
+    def lbu(self, rs:'str', rt:'str', imme:'str'):
+        return ("lbu     "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+
+    def lhu(self, rs:'str', rt:'str', imme:'str'):
+        return ("lhu     "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+    
+    def lb(self, rs:'str', rt:'str', imme:'str'):
+        return ("lb      "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+    
+    def lh(self, rs:'str', rt:'str', imme:'str'):
+        return ("lh      "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+    
+    def sb(self, rs:'str', rt:'str', imme:'str'):
+        return ("sb      "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+    
+    def sh(self, rs:'str', rt:'str', imme:'str'):
+        return ("sh      "+dict_reg[rt]+","+bin_to_hex(imme, 32, 1)+"("+dict_reg[rs]+")")
+
+    def eret(self):
+        return ("eret")
+    
+    def mfc0(self, rt:'str', rd:'str'):
+        return ("mfc0    "+dict_reg[rt]+","+dict_reg[rd])
+
+    def mtc0(self, rt:'str', rd:'str'):
+        return ("mtc0    "+dict_reg[rt]+","+dict_reg[rd])
+
+    def clz(self, rs:'str', rd:'str'):
+        return ("clz     "+dict_reg[rd]+","+dict_reg[rs])
