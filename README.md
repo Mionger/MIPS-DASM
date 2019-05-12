@@ -14,13 +14,13 @@ Lastest Update
 &nbsp;
 : 
 &nbsp;
-2019-5-10  
+2019-5-12  
 &nbsp;&nbsp;&nbsp;&nbsp;
 Version
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 : 
 &nbsp;
-v 0.0.5  
+v 0.1.0  
 &nbsp;&nbsp;&nbsp;&nbsp;
 OS
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -37,9 +37,12 @@ python
 **Total completed 31 mips instructions now**  
   
 ## **TODO list:**  
-**1. extend it to support 54 mips instructions**  
+~~**1. extend it to support 54 mips instructions**~~  
 
 ## Update Log  
+>v 0.1.0 2019-5-12
+>1. Complete DIV/DIVU/MULT/NULTU/BGEZ/JALR/LBU/LHU/LB/LH/SB/SH/BREAK/SYSCALL/ERET/MFHI/MFLO/MTHI/MTLO/MFC0/MTC0/CLZ/TEQ    
+
 >v 0.0.5 2019-5-10
 >1. Complete ADD/ADDU/SUB/SUBU/AND/OR/XOR/NOR/SLT/SLTU/SLL/SRL/SRA/SLL/SRL/SRAV/JR  
   
