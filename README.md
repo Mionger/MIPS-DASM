@@ -58,4 +58,4 @@ python
 >3. delete Code.input_deal()
   
 >v 0.0.1 2019-4-26  
->1.Define the interfaces of the modules  
+>1. Define the interfaces of the modules  
